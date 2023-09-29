@@ -1,0 +1,184 @@
+@import url("https://use.typekit.net/jmk3xov.css");
+@font-face {
+  font-family: 'robot';
+  src: url('robot.ttf') format('truetype');
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+}
+
+
+:root {
+  --dark-bg: rgba(15, 15, 15, 0.95);
+  --spacing: 350px;
+
+  font-family: robot, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+ 
+  
+}
+
+
+main {
+  width: 100vw;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  
+  
+}
+
+h1, h2, h3, blockquote {
+  font-family: robot, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+
+  header {
+    background: var(--dark-bg);
+    grid-column: 2 / span 5;
+    font-size: 1rem;
+    padding: 2px;
+    margin-bottom: var(--spacing);
+    border: 20px solid transparent;
+    border-image-source: url('metal.jpg');
+    border-image-slice: 20;
+    border-image-repeat: round;
+    
+    
+  }
+  
+  
+  section {
+    grid-column: 2 / 8;
+    padding: 1rem;
+    background: var(--dark-bg);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+    margin-bottom: 150px;
+    margin-top: 150px;
+
+    /* Ajoutez le border-image */
+    border: 20px solid transparent;
+    border-image-source: url('metal.jpg');
+    border-image-slice: 20;
+    border-image-repeat: round;
+    
+    
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0;
+    grid-column: 2 / span 9;
+    margin-bottom: var(--spacing);
+    margin-top: 150px;
+    
+  }
+
+  blockquote p {
+    color: black;
+    background-color: white;
+    font-size: 4rem;
+    display: inline;
+    line-height: 1;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border: 20px solid transparent;
+    border-image-source: url('metal.jpg');
+    border-image-slice: 20;
+    border-image-repeat: round;
+    
+    
+  }
+
+  .left {
+    grid-column: 6 / 12;
+  }
+  
+/*   animation-------------------------------------------------------------*/
+  /* Animation pour l'apparition */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation pour la disparition */
+@keyframes fade-in-from-background {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9); /* Ajustez selon vos préférences */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+header, section, blockquote {
+  opacity: 0;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+header {
+  animation-name: fade-in-from-background;
+}
+
+section, blockquote {
+  animation-name: fade-in-from-background;
+}
+
+.fade-out {
+  animation-name: fade-out;
+}
+#openEmailModal {
+  background-color: #2942DC;
+  color: #fff;
+  font-family: robot, sans-serif;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-image: url('metal.jpg');
+  background-repeat: repeat;
+}
+
+#github {
+  background-color: #2942DC;
+  color: #fff;
+  font-family: robot, sans-serif;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-image: url('metal.jpg');
+  background-repeat: repeat;
+}
