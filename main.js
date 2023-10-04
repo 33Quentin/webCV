@@ -1,6 +1,6 @@
 import './style.css';
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+//import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 //import { FontLoader } from 'three';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
