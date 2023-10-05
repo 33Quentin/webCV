@@ -1,5 +1,5 @@
 import './style.css';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
+
 import TextTexture from '@seregpie/three.text-texture';
 
 // Setup
