@@ -1,6 +1,6 @@
 import './style.css';
 
-import TextTexture from '@seregpie/three.text-texture';
+
 
 // Setup
 document.addEventListener('DOMContentLoaded', function() {
