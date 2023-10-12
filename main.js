@@ -1,5 +1,5 @@
 import './style.css';
-
+import * as TextTexture from "https://cdn.jsdelivr.net/npm/@seregpie/three.text-texture@3.2.1/index.min.js";
 
 
 // Setup
