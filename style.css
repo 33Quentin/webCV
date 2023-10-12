@@ -74,6 +74,7 @@ h1, h2, h3, blockquote {
     margin-bottom: var(--spacing);
     margin-bottom: 150px;
     margin-top: 150px;
+    white-space: nowrap;
 
     /* Ajoutez le border-image */
     border: 20px solid transparent;
