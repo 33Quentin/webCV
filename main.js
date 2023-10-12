@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 
-
 // Setup
 document.addEventListener('DOMContentLoaded', function() {
   
