@@ -1,5 +1,6 @@
 ::-webkit-scrollbar {
   width: 0px;
+  display: none;
 }
 
 @font-face {
