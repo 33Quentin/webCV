@@ -1,7 +1,32 @@
 import * as THREE from 'three';
 
+// function on_window(){
+// let jiji = document.querySelector('#cadre');
+// jiji.textContent=window.innerWidth;
+// jiji.style.position="absolute";
+// jiji.style.ZIndex="999";
+// let canvas= document.querySelector('#bg');
+// canvas.style.width=window.innerWidth+"px";
+// canvas.style.height=screen.height+"px"
+// };
+
+
+// Fonction pour vérifier si un élément est dans la vue
+export function isElementInViewport(element, offset) {
+  const rect = element.getBoundingClientRect();
+  // return true;
+  return (
+    rect.top >= -offset &&
+    //rect.left >= 0 &&
+    rect.bottom <= (screen.Height || document.documentElement.clientHeight) + offset 
+    //rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
 // Setup
 document.addEventListener('DOMContentLoaded', function() {
+
   
 const scene = new THREE.Scene();
 
@@ -16,6 +41,11 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
 camera.position.setX(-3);
+
+
+// window.addEventListener("resize", on_window);
+// on_window();// or window.addEventListener('load', on_window);
+
 
 
 renderer.render(scene, camera);
@@ -270,23 +300,26 @@ const blockquotes = document.querySelectorAll('blockquote');
 // Fonction pour vérifier si un élément est dans la vue
 function isElementInViewport(element, offset) {
   const rect = element.getBoundingClientRect();
+  // return true;
   return (
     rect.top >= -offset &&
     rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset &&
+    rect.bottom <= (screen.Height || document.documentElement.clientHeight) + offset &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
 
 // Fonction pour gérer l'animation
 function handleElementAnimation(element, offset) {
-  if (isElementInViewport(element, offset)) {
+  let viewport=isElementInViewport(element, offset);
+  if (viewport) {
     element.classList.add('fade-in-from-background');  // Nouvelle classe pour l'animation
     element.classList.remove('fade-out');
   } else {
     element.classList.add('fade-out');
     element.classList.remove('fade-in-from-background'); // Assurez-vous que la classe d'apparition est supprimée
   }
+  return viewport;
 }
 
 // Appel de la fonction pour le header
@@ -294,7 +327,8 @@ handleElementAnimation(header, 150);
 
 // Appel de la fonction pour chaque section
 sections.forEach(section => {
-  handleElementAnimation(section, 150);
+  let testview=handleElementAnimation(section, 150);
+  console.log(testview);
 });
 
 // Appel de la fonction pour chaque blockquote
